@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+label{
+  margin-left: 4px;
+  
+}
+.inputTextForm {
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.question-card {
+  background-color: red;
+
+  background-color: paleturquoise;
+  border: 1px solid black;
+  margin: 2px;
+  min-height: 50px;
+  text-align: center;
+  
+}
+.menu > ul >li{
+display: inline;
+}

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <div>
+                <select class="form-control" id ="documentId" onchange="formOptions()">
+                    <option>Выберите документ</option>
+                {{#each documents}}
+                    <option value="{{this.id}}" >{{this.name}}</option>
+                {{/each}}
+                </select>
+            </div>
+            <h3>Easy Создание радио-баттон блока</h3>
+            <form action="/form/create" method="POST" class="form-group">
+                <label for="formName">Имя блока</label>
+                <input type="text" class="form-control" placeholder="Block name" name="bbName">
+
+                <div id='variant'>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Тип блока</label>
+                        <select class="form-control" id="exampleFormControlSelect1" onchange="drawOptions()">
+                            <option>Выберите тип</option>
+                            <option value="radio">radio</option>
+                            <option value="text">text</option>
+                            <option value="data">data</option>
+                            <option value="number">number</option>
+                            <option value="dropbox">dropbox</option>
+                        </select>
+                        </br>
+                        <div class="btn-group btn-group-toggle minus-plus" data-toggle="buttons">
+
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="minus" autocomplete="off"
+                                    onclick="radioCreate()"> +
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="plus" autocomplete="off" onclick="radioDelete()">
+                                -
+                            </label>
+                        </div>
+                    </div>
+                    <div id="new-block-generator"></div>
+
+                </div>
+                <input type="hidden" id="hidden-type" name="type" value="">
+                <input type="hidden" id="hidden-id" name="document" value="">
+                <button type="submit" class="btn btn-outline-success">Success</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="/javascripts/generator.js"></script>

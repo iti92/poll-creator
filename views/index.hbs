@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<div class="container-fluid">
+    <div class="row">
+        {{#if pages}}
+        {{#each pages}}
+        <div class="col-md-2 question-card">
+            <a href="/pages/{{this.id}}">{{this.name}}</a>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+
+
+    {{#each pool}}
+    <div>
+        {{@value}}
+        <div> </div>
+      
+    <div>
+    {{/each}}
+</div>
+
+
+

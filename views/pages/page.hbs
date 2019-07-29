@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <h3>{{page.name}}</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+        <form action="/pools" method="POST">
+            <input id="prodId" name="pageName" type="hidden" value="{{page.name}}">
+            {{#each a}}
+            {{#if isRadio}}
+            <h3>{{name}}</h3>
+            
+            <hr>
+            {{#each options}}
+            <p><input name="{{../name}}" type="radio" value="{{this}}"> {{this}}</p>
+            
+            {{/each}}
+            <hr>
+            {{/if}}
+            {{#if isText}}
+            <h3 name="{{@index}}">{{name}}</h3>
+            {{#each options}}
+            <label for="{{../name}}">{{this}}</label>
+            <input type="text" name="{{../name}}" class="form-control">
+            {{/each}}
+            {{/if}}
+            {{/each}}
+        
+
+            <button type="submit" class="btn btn-outline-success">Отправить</button>
+        </form>
+        </div>
+    </div>
+</div>
